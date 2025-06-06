@@ -1,18 +1,17 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 
 const Form = () => {
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Logic to handle the email submission can go here
-    alert(`Subscribed with: ${email}`);
-    setEmail(''); // Clear the input field
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Logic to handle the email submission can go here
+  //   alert(`Subscribed with: ${email}`);
+  //   setEmail(''); // Clear the input field
+  // };
 
   return (
-    // pages/form.tsx (or .jsx)
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
           <h2 className="text-2xl font-semibold text-center mb-6">Sign Up</h2>
