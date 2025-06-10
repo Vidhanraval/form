@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from '@/components/Challenge';
+import App from './page';
 
-const App: React.FC = () => {
+const challenge: React.FC = () => {
   return <Card />;
 };
 
-export default App;
+export default challenge;
