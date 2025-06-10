@@ -4,11 +4,8 @@ const Card: React.FC = () => {
   return (
     <div className="bg-[#f4d04e] min-h-screen flex items-center justify-center font-sans">
       <div className="bg-white rounded-[15px] shadow-[8px_8px_0px_black] max-w-[350px] p-5">
-        <img
-          src="/illustration-article.svg"
-          alt="Course"
-          className="w-full rounded-[10px] mb-4"
-        />
+
+        <img src="/public/illustration-article.svg" alt="Course" className="w-full rounded-[10px] mb-4" />
 
         <div className="inline-block bg-[#f4d04e] text-black font-bold text-sm px-2.5 py-1 rounded mb-2">
           Learning
@@ -22,7 +19,7 @@ const Card: React.FC = () => {
 
         <div className="flex items-center gap-2 mt-2">
           <img
-            src="/image-avatar.webp"
+            src="/public/image-avatar.svg"
             alt="Greg Hooper"
             className="w-[30px] h-[30px] rounded-full"
           />
