@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 
 const profile = () => {
     return (
@@ -6,11 +7,11 @@ const profile = () => {
             <div className="bg-white rounded-xl w-80 text-center overflow-hidden">
                 {/* Top image with relative container */}
                 <div className="relative">
-                    <img src="/bg-pattern-card.svg" alt="Background" width={320} height={120} className="w-full" />
+                    <Image src="/bg-pattern-card.svg" alt="Background" width={320} height={120} className="w-full" />
 
                     {/* Profile image overlapping */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-10">
-                        <img
+                        <Image
                             src="/image-victor.jpg"
                             alt="Victor"
                             width={80}
