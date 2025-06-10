@@ -1,10 +1,10 @@
-import Form from '@/components/order'
+import Form from '@/components/form'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      hello how are you
+    
       <Form />
     </div>
   )
