@@ -1,4 +1,3 @@
-const newLocal = "use client";
 import React from 'react'
 
 const Form = () => {
