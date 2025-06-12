@@ -1,11 +1,12 @@
+
 import React from 'react';
 
-const Calculator: React.FC = () => {
+const Calc: React.FC = () => {
   return (
     <div className="bg-[#3a4764] min-h-screen flex items-center justify-center p-4">
       <div className="bg-[#252d44] p-6 rounded-xl shadow-xl w-full max-w-sm">
 
-        <div className="text-white text-2xl font-bold mb-4">calc</div>
+        <div className="text-white text-2xl font-bold mb-4">Calc</div>
 
         <div className="bg-[#181f33] text-white text-3xl text-right font-bold rounded p-4 mb-6">
           399,981
@@ -43,4 +44,4 @@ const Calculator: React.FC = () => {
   );
 };
 
-export default Calculator;
+export default Calc;

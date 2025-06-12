@@ -1,7 +1,13 @@
+
 import React from 'react';
-import Calc from '@/components/Calc';
+import Calc from '@/components/Calc/index';
 
-export default function Page() {
-  return <Calc />;
-}
+const calc = () => {
+  return (
+    <div>
+      <Calc />
+    </div>
+  );
+};
 
+export default Calc;
