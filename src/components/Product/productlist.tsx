@@ -30,7 +30,7 @@ const products = [
     {
         type: "Tiramisu",
         name: "Classic Tiramisu",
-        price: 5.5,
+        price: 5.5,         
         image: "/image-tiramisu-desktop.jpg",
     },
     {
