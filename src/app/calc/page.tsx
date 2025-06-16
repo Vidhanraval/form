@@ -1,13 +1,8 @@
-
 import React from 'react';
-import Calc from '@/components/Calc/index';
+import Calc from '@/components/Calc'; // adjust path
 
-const calc = () => {
-  return (
-    <div>
-      <Calc />
-    </div>
-  );
+const App: React.FC = () => {
+  return <Calc />;
 };
 
-export default Calc;
+export default App;
