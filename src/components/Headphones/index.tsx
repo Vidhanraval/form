@@ -38,7 +38,8 @@ export default function Page() {
 
   return (
     <div className="bg-black text-white min-h-screen font-sans overflow-x-hidden relative">
-      {/* Show All Products Modal */}
+
+      {/* All Products Modal */}
       {showAllProducts && (
         <div className="fixed inset-0 z-50 bg-white text-black overflow-auto px-6 py-8 md:py-16 md:px-10">
           <button
@@ -73,7 +74,7 @@ export default function Page() {
         </div>
       )}
 
-      {/* Individual Product Modal */}
+      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-white text-black overflow-auto px-6 py-8 md:py-16 md:px-32">
           <button
@@ -111,11 +112,13 @@ export default function Page() {
       {/* Navigation */}
       <nav className="flex justify-between items-center px-6 py-4 border-b border-gray-700 sticky top-0 z-40 bg-black">
         <div className="flex items-center gap-3">
-          <button onClick={() => setShowMenu(!showMenu)} className="md:hidden text-2xl">&#9776;</button>
+          <button onClick={() => setShowMenu(!showMenu)} className="md:hidden text-2xl">
+            &#9776;
+          </button>
           <h1 className="font-bold text-2xl">audiophile</h1>
         </div>
         <ul className="hidden md:flex gap-8 uppercase text-sm tracking-wider">
-          <li className="cursor-pointer hover:text-orange-400" onClick={() => setShowAllProducts(true)}>All Products</li>
+          <li className="cursor-pointer hover:text-orange-400">Home</li>
           <li className="cursor-pointer hover:text-orange-400" onClick={() => setShowModal('headphone')}>Headphones</li>
           <li className="cursor-pointer hover:text-orange-400" onClick={() => setShowModal('speaker')}>Speakers</li>
           <li className="cursor-pointer hover:text-orange-400" onClick={() => setShowModal('earphone')}>Earphones</li>
@@ -131,7 +134,6 @@ export default function Page() {
       {/* Mobile Menu */}
       {showMenu && (
         <div className="md:hidden bg-gray-900 text-white px-6 py-4 space-y-4 text-center uppercase font-semibold">
-          <div className="cursor-pointer hover:text-orange-400" onClick={() => { setShowAllProducts(true); setShowMenu(false); }}>All Products</div>
           <div className="cursor-pointer hover:text-orange-400" onClick={() => { setShowModal('headphone'); setShowMenu(false); }}>Headphones</div>
           <div className="cursor-pointer hover:text-orange-400" onClick={() => { setShowModal('speaker'); setShowMenu(false); }}>Speakers</div>
           <div className="cursor-pointer hover:text-orange-400" onClick={() => { setShowModal('earphone'); setShowMenu(false); }}>Earphones</div>
@@ -147,7 +149,7 @@ export default function Page() {
             Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
           </p>
           <button
-            onClick={() => setShowModal('headphone')}
+            onClick={() => setShowAllProducts(true)}
             className="mt-4 bg-orange-500 hover:bg-orange-600 rounded-full text-white py-2 px-6 uppercase text-sm font-bold"
           >
             See Product
@@ -162,7 +164,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Category Cards */}
+      {/* Category Cards with Overlaid Images */}
       <section className="bg-white text-black px-6 py-16 grid gap-10 md:grid-cols-3">
         {(['headphone', 'speaker', 'earphone'] as const).map((type) => (
           <div
