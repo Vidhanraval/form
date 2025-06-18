@@ -1,8 +1,8 @@
 import React from 'react';
-import Calc from '@/components/Calc'; // adjust path
+import Headphones from '@/components/Headphones/index';
 
 const App: React.FC = () => {
-  return <Calc />;
+  return <Headphones />;
 };
 
 export default App;

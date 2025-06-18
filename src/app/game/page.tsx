@@ -1,8 +1,8 @@
 import React from 'react';
-import Calc from '@/components/Calc'; // adjust path
+import Game from '@/components/Game';
 
 const App: React.FC = () => {
-  return <Calc />;
+  return <Game />;
 };
 
 export default App;

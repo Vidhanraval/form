@@ -1,47 +1,62 @@
+import React from "react";
 
-import React from 'react';
-
-const Calc: React.FC = () => {
+export default function App() {
   return (
-    <div className="bg-[#3a4764] min-h-screen flex items-center justify-center p-4">
-      <div className="bg-[#252d44] p-6 rounded-xl shadow-xl w-full max-w-sm">
+    <div className="bg-[#3a4764] min-h-screen flex items-center justify-center font-sans">
+      <div className="w-[450px]">
+        <div className="flex justify-between items-center px-4 pt-6 pb-4">
+          <h1 className="text-white text-3xl font-bold">Calc</h1>
 
-        <div className="text-white text-2xl font-bold mb-4">Calc</div>
+          <div>
+            <div className="flex flex-col gap-1 items-end">
+              <div className="flex items-center justify-end gap-6 h-[10px]">
+                <span className="text-white text-xs font-bold tracking-wide">THEME</span>
+                <div className="flex gap-4 text-white text-sm font-bold">
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                </div>
+              </div>
 
-        <div className="bg-[#181f33] text-white text-3xl text-right font-bold rounded p-4 mb-6">
-          399,981
+
+              <div className="w-[60px] h-[24px] bg-[#232c43] rounded-full relative mt-1">
+
+                <div className="w-[16px] h-[16px] bg-[#d13f30] rounded-full absolute top-1 left-1"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 mb-4">
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">7</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">8</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">9</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#647198] text-white">DEL</button>
 
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">4</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">5</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">6</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">+</button>
-
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">1</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">2</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">3</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">-</button>
-
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">.</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">0</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">/</button>
-          <button className="py-3 rounded font-bold text-xl bg-[#eae3dc] text-black">*</button>
+        <div className="bg-[#181f32] text-white text-4xl font-bold text-right px-6 py-6 rounded-md mb-6">
+          1234567890
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <button className="py-3 rounded bg-[#647198] text-white font-bold text-xl">RESET</button>
-          <button className="py-3 rounded bg-[#d13f30] text-white font-bold text-xl">=</button>
-        </div>
+        <div className="bg-[#252d44] p-6 rounded-md grid grid-cols-4 gap-4">
+          {[
+            "7", "8", "9", "DEL",
+            "4", "5", "6", "+",
+            "1", "2", "3", "-",
+            ".", "0", "/", "x"
+          ].map((key) => (
+            <button
+              key={key}
+              className={`py-3 text-xl font-bold rounded shadow
+                ${key === "DEL" ? "bg-[#647198] text-white" : "bg-[#eae3dc] text-[#434a59]"}
+              `}
+            >
+              {key}
+            </button>
+          ))}
 
+          <button className="col-span-2 py-3 text-xl font-bold rounded shadow bg-[#647198] text-white">
+            RESET
+          </button>
+          <button className="col-span-2 py-3 text-xl font-bold rounded shadow bg-[#d13f30] text-white">
+            =
+          </button>
+        </div>
       </div>
     </div>
   );
-};
-
-export default Calc;
+}
