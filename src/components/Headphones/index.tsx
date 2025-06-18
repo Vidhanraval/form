@@ -2,43 +2,49 @@
 
 import { useState, useEffect } from 'react';
 
+type ProductType = 'headphone' | 'speaker' | 'earphone';
+
+const products: Record<ProductType, {
+  title: string;
+  description: string;
+  price: string;
+  image: string;
+}> = {
+  headphone: {
+    title: 'XX99 Mark II Headphones',
+    description: 'The new XX99 Mark II headphones is the pinnacle of pristine audio.',
+    price: '$ 2,999',
+    image: '/headpphone.webp',
+  },
+  speaker: {
+    title: 'ZX9 Speakers',
+    description: 'Upgrade your sound system with ZX9 active speaker. Wireless and powerful.',
+    price: '$ 4,500',
+    image: '/speaker.webp',
+  },
+  earphone: {
+    title: 'Audiophone Earphones',
+    description: 'Sleek design and crystal-clear sound for on-the-go listening.',
+    price: '$ 1,999',
+    image: '/Audiophone.webp',
+  },
+};
+
 export default function Page() {
-  const [showModal, setShowModal] = useState<'headphone' | 'speaker' | 'earphone' | null>(null);
+  const [showModal, setShowModal] = useState<ProductType | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [showMenu, setShowMenu] = useState(false);
   const [showAllProducts, setShowAllProducts] = useState(false);
-
-  const increaseQty = () => setQuantity((prev) => prev + 1);
-  const decreaseQty = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   useEffect(() => {
     setQuantity(1);
   }, [showModal]);
 
-  const products = {
-    headphone: {
-      title: 'XX99 Mark II Headphones',
-      description: 'The new XX99 Mark II headphones is the pinnacle of pristine audio.',
-      price: '$ 2,999',
-      image: '/headpphone.webp',
-    },
-    speaker: {
-      title: 'ZX9 Speakers',
-      description: 'Upgrade your sound system with ZX9 active speaker. Wireless and powerful.',
-      price: '$ 4,500',
-      image: '/speaker.webp',
-    },
-    earphone: {
-      title: 'Audiophone Earphones',
-      description: 'Sleek design and crystal-clear sound for on-the-go listening.',
-      price: '$ 1,999',
-      image: '/Audiophone.webp',
-    },
-  };
+  const increaseQty = () => setQuantity((prev) => prev + 1);
+  const decreaseQty = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   return (
     <div className="bg-black text-white min-h-screen font-sans overflow-x-hidden relative">
-
       {/* All Products Modal */}
       {showAllProducts && (
         <div className="fixed inset-0 z-50 bg-white text-black overflow-auto px-6 py-8 md:py-16 md:px-10">
@@ -49,7 +55,7 @@ export default function Page() {
             &larr; Go Back
           </button>
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {(['headphone', 'speaker', 'earphone'] as const).map((type) => (
+            {(Object.keys(products) as ProductType[]).map((type) => (
               <div key={type} className="flex flex-col items-center bg-gray-100 p-6 rounded-lg">
                 <img
                   src={products[type].image}
@@ -74,7 +80,7 @@ export default function Page() {
         </div>
       )}
 
-      {/* Modal */}
+      {/* Product Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-white text-black overflow-auto px-6 py-8 md:py-16 md:px-32">
           <button
@@ -112,16 +118,15 @@ export default function Page() {
       {/* Navigation */}
       <nav className="flex justify-between items-center px-6 py-4 border-b border-gray-700 sticky top-0 z-40 bg-black">
         <div className="flex items-center gap-3">
-          <button onClick={() => setShowMenu(!showMenu)} className="md:hidden text-2xl">
-            &#9776;
-          </button>
+          <button onClick={() => setShowMenu(!showMenu)} className="md:hidden text-2xl">&#9776;</button>
           <h1 className="font-bold text-2xl">audiophile</h1>
         </div>
         <ul className="hidden md:flex gap-8 uppercase text-sm tracking-wider">
-          <li className="cursor-pointer hover:text-orange-400">Home</li>
-          <li className="cursor-pointer hover:text-orange-400" onClick={() => setShowModal('headphone')}>Headphones</li>
-          <li className="cursor-pointer hover:text-orange-400" onClick={() => setShowModal('speaker')}>Speakers</li>
-          <li className="cursor-pointer hover:text-orange-400" onClick={() => setShowModal('earphone')}>Earphones</li>
+          {(Object.keys(products) as ProductType[]).map((type) => (
+            <li key={type} className="cursor-pointer hover:text-orange-400" onClick={() => setShowModal(type)}>
+              {type.charAt(0).toUpperCase() + type.slice(1)}s
+            </li>
+          ))}
         </ul>
         <div className="cursor-pointer">
           <svg width="24" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -134,9 +139,18 @@ export default function Page() {
       {/* Mobile Menu */}
       {showMenu && (
         <div className="md:hidden bg-gray-900 text-white px-6 py-4 space-y-4 text-center uppercase font-semibold">
-          <div className="cursor-pointer hover:text-orange-400" onClick={() => { setShowModal('headphone'); setShowMenu(false); }}>Headphones</div>
-          <div className="cursor-pointer hover:text-orange-400" onClick={() => { setShowModal('speaker'); setShowMenu(false); }}>Speakers</div>
-          <div className="cursor-pointer hover:text-orange-400" onClick={() => { setShowModal('earphone'); setShowMenu(false); }}>Earphones</div>
+          {(Object.keys(products) as ProductType[]).map((type) => (
+            <div
+              key={type}
+              className="cursor-pointer hover:text-orange-400"
+              onClick={() => {
+                setShowModal(type);
+                setShowMenu(false);
+              }}
+            >
+              {type.charAt(0).toUpperCase() + type.slice(1)}s
+            </div>
+          ))}
         </div>
       )}
 
@@ -164,9 +178,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Category Cards with Overlaid Images */}
+      {/* Category Cards */}
       <section className="bg-white text-black px-6 py-16 grid gap-10 md:grid-cols-3">
-        {(['headphone', 'speaker', 'earphone'] as const).map((type) => (
+        {(Object.keys(products) as ProductType[]).map((type) => (
           <div
             key={type}
             className="relative bg-gray-100 text-center pt-20 pb-10 rounded-xl cursor-pointer hover:shadow-xl transition"
