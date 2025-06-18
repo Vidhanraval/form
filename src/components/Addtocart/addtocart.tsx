@@ -14,8 +14,7 @@ const OrderConfirmed = () => {
       name: "Vanilla Bean Crème Brûlée",
       quantity: 4,
       price: 7.0,
-      image: "/image-creme-bruleeproductlist
-      -desktop.jpg",
+      image: "/image-creme-bruleeproductlist-desktop.jpg",
     },
     {
       name: "Vanilla Panna Cotta",
