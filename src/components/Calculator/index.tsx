@@ -12,7 +12,7 @@ type FormValues = {
 
 export default function MortgageCalculator() {
   const { control, handleSubmit, reset } = useForm<FormValues>({
-    defaultValues: { loanAmount: 0, interestRate: 0, termYears: 0, mortgageType: 'repayment' | 'interstOnly' }
+    defaultValues: { loanAmount: 0, interestRate: 0, termYears: 0, mortgageType: 'repayment' }
   });
 
   const [monthlyRepayment, setMonthlyRepayment] = useState<number | null>(null);
