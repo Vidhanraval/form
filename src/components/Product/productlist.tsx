@@ -25,7 +25,7 @@ const products = [
         type: "Macaron",
         name: "Macaron Mix of Five",
         price: 8.0,
-        image: "/image-tiramisu-desktop.jpg",
+        image: "/image-macaron-desktop.jpg",
     },
     {
         type: "Tiramisu",
@@ -37,31 +37,31 @@ const products = [
         type: "Baklava",
         name: "Pistachio Baklava",
         price: 4.0,
-        image: "/image-tiramisu-desktop.jpg",
+        image: "/image-baklava-desktop.jpg",
     },
     {
         type: "Pie",
         name: "Lemon Meringue Pie",
         price: 5.0,
-        image: "/image-tiramisu-desktop.jpg",
+        image: "/image-meringue-desktop.jpg",
     },
     {
         type: "Cake",
         name: "Red Velvet Cake",
         price: 4.5,
-        image: "/image-tiramisu-desktop.jpg",
+        image: "/image-cake-desktop.jpg",
     },
     {
         type: "Brownie",
         name: "Salted Caramel Brownie",
         price: 4.5,
-        image: "/image-tiramisu-desktop.jpg",
+        image: "/image-brownie-desktop.jpg",
     },
     {
         type: "Panna Cotta",
         name: "Vanilla Panna Cotta",
         price: 6.5,
-        image: "/image-tiramisu-desktop.jpg",
+        image: "/image-panna-cotta-desktop.jpg",
     },
 ];
 
