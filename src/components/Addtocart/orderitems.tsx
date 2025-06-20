@@ -46,9 +46,9 @@ const OrderItemsList = ({ items }: Props) => {
         </div>
       ))}
 
-      <div className="flex justify-between items-center text-lg font-semibold pt-2">
-        <p>Order Total</p>
-        <p>${orderTotal.toFixed(2)}</p>
+      <div className="flex justify-between items-center  p-3">
+        <p className="text-sm">Order Total</p>
+        <p className="font-semibold">${orderTotal.toFixed(2)}</p>
       </div>
     </div>
   );

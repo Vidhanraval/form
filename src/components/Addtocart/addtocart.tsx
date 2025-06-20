@@ -14,7 +14,7 @@ const OrderConfirmed = () => {
       name: "Vanilla Bean Crème Brûlée",
       quantity: 4,
       price: 7.0,
-      image: "/image-creme-bruleeproductlist-desktop.jpg",
+      image: "/image-creme-brulee-desktop.jpg",
     },
     {
       name: "Vanilla Panna Cotta",
@@ -41,7 +41,7 @@ const OrderConfirmed = () => {
 
         <OrderItemsList items={orderItems} />
 
-        <button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-full">
+        <button className="w-full bg-orange-700 hover:bg-orange-700 text-white py-3 rounded-full">
           Start New Order
         </button>
       </div>
