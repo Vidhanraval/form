@@ -1,8 +1,8 @@
 import React from 'react';
-import Calc from '@/components/Calc'; // adjust path
+import Flag from '@/components/Flag/index'; // adjust path
 
 const App: React.FC = () => {
-  return <Calc />;
+  return <Flag />;
 };
 
 export default App;
